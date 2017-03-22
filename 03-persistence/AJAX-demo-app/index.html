@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<h2>Welcome to Generic App</h2>
+		<p><a href="/babes">View baby animal terms JSON</a></p>
+		<div>
+		<button id="fetchem">Get babies</button>
+		<ul id="babes">
+			
+		</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+	$('#fetchem').on('click', function () {
+		$.ajax({
+			url: '/babes',
+			method: 'GET',
+			// dataType: 'text'
+		})
+		// $.post()
+		// $.get()
+		.then(function(babyNamesArrayFromBackend){
+			// add each array item to ul
+				// get ul
+				const $babes = $('#babes');
+				// create all of our li
+				babyNamesArrayFromBackend.forEach(function(babeObj){
+					//create
+					$babes.append(`<li>${babeObj.name}-${babeObj.type}</li>`) // makes last child of element
+				})
+			// throw new Error('ahhh')
+			// console.log(JSON.stringify(dataFromTheBackend));
+		})
+		.catch(console.error.bind(console))
+		
+	})
+	</script>
+</html>

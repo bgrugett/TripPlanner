@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id='main' class='container-fluid row'>
+  <div class= 'col-xs-8' id='map-canvas'>
+  </div>
+  <side class='col-xs-4'>
+    <div class='panel panel-default'>
+      <div class='panel-body'>
+        <div class='container'>
+          <select  class = 'chooser'>
+          <h4>Hotel</h4>      
+            
+            {% for hotel in hotels %}
+            <option>{{ hotel.name }}</option>
+            {% endfor %}
+          </select>
+          <button class='round btn btn-default'>+</button>
+          
+        </div>
+        <div class='container'>  
+          <h4>Restaurants</h4>      
+          <select class = 'chooser'>
+            {% for restaurant in restaurants %}
+            <option>{{ restaurant.name }}</option>
+            {% endfor %}
+            
+          </select >
+          <button class='round btn btn-default'>+</button>
+        </div>
+        <div class='container'>
+          <h4>Activities</h4>      
+          <select  class = 'chooser'>
+            {% for activity in activities %}
+            <option>{{ activity.name }}</option>
+            {% endfor %}
+          </select>
+          <button class='round btn btn-default'>+</button>
+        </div>
+      </div>
+    </div>
+  </side>
+ </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery yall</title>
+</head>
+<body>
+	<h1>Hello!!!!!!</h1>
+	<h1>Goodbye :( </h1>
+	<input type="text" id="cool-input">
+	<ul>
+		<li>Tom</li>
+		<li>Kate</li>
+		<li>Andrew</li>
+	</ul>
+	<!-- you will need to install jquery!! -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script>
+	// $('#cool-input').on('change', function (e) { // change happens when I click OUT of input
+ // 		console.log('e', e.target.value) // gives us the value if change
+ // 		//jQuery gives us .val() <-- only for jQuery element
+ // 		console.log('this', $(this).val());
+	// })
+	// $('h1').each(function(idx, el){
+	// 	console.log('el',el)
+	// })
+	// $('li').on('click', function (e) {
+	// 	console.log(e)
+	// })
+	$('ul').on('click', 'li', function(e){
+		console.log('e.target.value ', this)
+	})
+	const $newPeep = $('<li>Karen</li>')
+	$('ul').append($newPeep);
+
+	</script>
+</body>
+</html>
